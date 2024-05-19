@@ -192,31 +192,23 @@ export const MainPage: React.FC<{}> = (props) => {
           will allow you to generate zero knowledge proofs proving you received
           some email and mask out any private data, without trusting our server
           to keep your privacy. This demo is just one use case that lets you
-          prove you own a Twitter username on-chain, by verifying confirmation
-          emails (and their normally-hidden headers) from Twitter.
+          prove you own a certain amount of wealth in Kucoin on-chain, by verifying confirmation
+          emails (and their normally-hidden headers) for transactions.
           Visit <a href="https://prove.email/blog/zkemail">our blog</a>{" "}or{" "}
           <a href="https://prove.email">website</a>{" "}to learn more about ZK Email,
           and find the technical details on how this demo is built{" "}
           <a href="https://prove.email/blog/twitter">here</a>. 
           <br />
           <br />
-          If you wish to generate a ZK proof of Twitter badge (NFT), you must:
+          If you wish to generate a ZK proof of wealth badge (NFT), you must:
         </span>
         <NumberedStep step={1}>
-          Send yourself a{" "}
-          <a
-            href="https://twitter.com/account/begin_password_reset"
-            target="_blank"
-            rel="noreferrer"
-          >
-            password reset email
-          </a>{" "}
-          from Twitter. (Reminder: Twitter name with emoji might fail to pass DKIM verification)
+          Send yourself a transaction mail for 10000$ (no need to confirm the transaction)
+          from kucoin.
         </NumberedStep>
         <NumberedStep step={2}>
-          In your inbox, find the email from Twitter and click the three dot
-          menu, then "Show original" then "Copy to clipboard". If on Outlook,
-          download the original email as .eml and copy it instead.
+        In your inbox, find the email from KuCoin and click the three dot menu, then "Show original" then "Copy to clipboard". If on Outlook, download the original email as .eml and copy it instead.
+
         </NumberedStep>
         <NumberedStep step={3}>
           Copy paste or drop that into the box below. Note that we cannot use
@@ -225,8 +217,9 @@ export const MainPage: React.FC<{}> = (props) => {
           for a less sketchy email.
         </NumberedStep>
         <NumberedStep step={4}>
-          Paste in your sending Ethereum address. This ensures that no one else
-          can "steal" your proof for another account (frontrunning protection!).
+        Paste in your sending Ethereum address. This ensures that no one else can "steal" 
+        your proof for another account (frontrunning protection!). We will check if this is the same address 
+        you are providing below!
         </NumberedStep>
         <NumberedStep step={5}>
           Click <b>"Prove"</b>. Note it is completely client side and{" "}
@@ -234,10 +227,9 @@ export const MainPage: React.FC<{}> = (props) => {
           and no server ever sees your private information.
         </NumberedStep>
         <NumberedStep step={6}>
-          Click <b>"Verify"</b> and then <b>"Mint Twitter Badge On-Chain"</b>,
-          and approve to mint the NFT badge that proves Twitter ownership! Note
-          that it is 700K gas right now so only feasible on Sepolia, though we
-          intend to reduce this soon.
+          Click <b>"Verify"</b> and then <b>"Mint KuCoin Badge On-Chain"</b>, 
+          and approve to mint the NFT badge 
+          that proves you have used KuCoin exchange as a power user
         </NumberedStep>
       </Col>
       <Main>
@@ -446,7 +438,7 @@ export const MainPage: React.FC<{}> = (props) => {
               : !write
               ? "Connect Wallet first, scroll to top!"
               : verificationPassed
-              ? "Mint Twitter badge on-chain"
+              ? "Mint KuCoin Badge On-Chain"
               : "Verify first, before minting on-chain!"}
           </Button>
           {isSuccess && (
